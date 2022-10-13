@@ -13,7 +13,7 @@ CURRENT_PID=$(pgrep -f springboot2-webservice.*.jar)
 
 echo "현재 구동 중인 애플리케이션 pid: $CURRENT_PID"
 
-if [ -z $CURRNET_PID ]; then
+if [ ! -z $CURRNET_PID ]; then
   echo "> 현재 구동 중인 애플리케이션이 없으므로 종료하지 않습니다."
 else
   echo "> kill -15 $CURRENT_PID"
@@ -29,7 +29,7 @@ echo "> Jar Name: $JAR_NAME"
 
 echo "> $JAR_NAME 에 실행 권한 추가"
 
-chomd +x $JAR_NAME
+chmod +x $JAR_NAME
 
 echo "> $JAR_NAME 실행"
 
